@@ -1,5 +1,4 @@
-import { API_KEY, BASE_URL } from './constants'
-
+import { API_KEY, BASE_URL } from "./constants";
 
 // things to implement
 // 1. Search
@@ -8,12 +7,17 @@ import { API_KEY, BASE_URL } from './constants'
 // 4. Infinite Scroll
 // 5. order
 // 6. filters
-const searchByKeyword = (keyword: string): any => {
-        //Resource: https://developers.google.com/youtube/v3/docs/search/list
-       return  fetch(`${BASE_URL}/search?part=snippet&maxResults=25&q=${keyword}&key=${API_KEY}`)
-}
+const searchByKeyword = async(keyword: string) => {
+  //Resource: https://developers.google.com/youtube/v3/docs/search/list
+  try {
+    const response = await fetch(
+      `${BASE_URL}/search?part=snippet&maxResults=50&q=${keyword}&key=${API_KEY}`
+    );
+    const data = await response.json();
+  
+   return data.items
 
-export {
-    searchByKeyword
-}
+  } catch (error) {error}
+};
 
+export { searchByKeyword };
