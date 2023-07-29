@@ -1,0 +1,17 @@
+.cardContainer{
+    margin-top:3px;
+    margin-left:10px;
+    width: 190px;
+    height:150px;
+  
+    // overflow:hidden;
+
+}
+.cardTitle{
+    width: "200px";
+          whiteSpace: " nowrap";
+          textAlign: "center";
+          overflow: "hidden"
+          textOverflow: "ellipsis"
+          fontSize: "12px"
+}
