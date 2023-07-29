@@ -19,5 +19,20 @@ const searchByKeyword = async(keyword: string) => {
 
   } catch (error) {error}
 };
+// http://suggestqueries.google.com/complete/search?hl=en&ds=yt&client=youtube&q=${term}
+const getSuggestionList = async(keyword: string) => {
+  //Resource: https://developers.google.com/youtube/v3/docs/search/list
+  try {
+    const response = await fetch(
+     `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${keyword}`
+    );
+    const data = await response.json();
+  
+   return data.items
 
-export { searchByKeyword };
+  } catch (error) {error}
+};
+
+
+export { searchByKeyword ,getSuggestionList};
+
