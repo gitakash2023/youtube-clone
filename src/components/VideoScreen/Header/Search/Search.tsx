@@ -1,6 +1,7 @@
 import React from "react";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import { brotliDecompress } from "zlib";
+import { getSuggestionList } from "@/services/youtubeService.ts/search";
 
 export const Search = ({ searchString, setSearchString, handleSearch }) => {
   return (
@@ -17,7 +18,11 @@ export const Search = ({ searchString, setSearchString, handleSearch }) => {
           <input
             value={searchString}
             type="text"
-            onChange={(e) => setSearchString(e.target.value)}
+            onChange={(e) =>{
+              getSuggestionList(e.target.value)
+              setSearchString(e.target.value)
+
+            }}
             placeholder=" Search"
             style={{
               border: "0.5px solid gray",
