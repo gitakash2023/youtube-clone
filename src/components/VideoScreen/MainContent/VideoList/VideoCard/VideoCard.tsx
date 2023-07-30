@@ -1,21 +1,8 @@
 import React from "react";
 import classes from "./VideoCard.module.scss";
+import { Video } from '@/types/videoType';
 
-interface VideoCardProps {
-  video: {
-    id: { videoId: string };
-    snippet: {
-      title: string;
-      description: string;
-      thumbnails: {
-        medium: {
-          url: string;
-        };
-      };
-    };
-  };
-}
-export const VideoCard = ({ video }: VideoCardProps) => {
+export const VideoCard = ({ video }: { video: Video }) => {
   return (
     <div className={classes.cardContainer} key={video.id.videoId}>
       <img
@@ -23,7 +10,7 @@ export const VideoCard = ({ video }: VideoCardProps) => {
         // alt={video.snippet.title}
         // width="100%"
         className="rounded-lg "
-        
+
       />
       <h3
         style={{
@@ -45,7 +32,7 @@ export const VideoCard = ({ video }: VideoCardProps) => {
           overflow: "hidden",
           textOverflow: "ellipsis",
           fontSize: "12px",
-          
+
         }}
       >
         {video.snippet.description}
