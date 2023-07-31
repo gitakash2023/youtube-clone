@@ -1,19 +1,16 @@
-import React from 'react'
-import { VideoCard } from './VideoCard/VideoCard'
-import { Video } from '@/types/videoType';
+import React, { useContext } from "react";
+import { VideoCard } from "./VideoCard/VideoCard";
+import MyContext from "@/components/MyContext/MyContext";
 
-export const VideoList = ({ videos }: { videos: Video[] }) => {
+export const VideoList = () => {
+  const { videos } = useContext(MyContext);
   return (
-
     <div className="flex flex-wrap gap-3 mb-60">
-      {videos.map((video) => (
-        <div key={video.id.videoId}><VideoCard video={video} /></div>
+      {videos?.map((video) => (
+        <div key={video.id.videoId}>
+          <VideoCard video={video} />
+        </div>
       ))}
     </div>
-
-
-
-
-
-  )
+  );
 };

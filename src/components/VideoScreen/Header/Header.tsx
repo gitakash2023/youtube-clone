@@ -1,12 +1,8 @@
-import React from 'react'
-import { Search } from './Search/Search'
+import React from "react";
+import { Search } from "./Search/Search";
 
-interface HeaderProps { searchString: string, setSearchString: (s: string) => void, handleSearch: () => void }
+const Header = () => {
+  return <Search />;
+};
 
-export const Header = ({ searchString, setSearchString, handleSearch }: HeaderProps) => {
-  return (
-    <>
-      <Search searchString={searchString} setSearchString={setSearchString} handleSearch={handleSearch} />
-    </>
-  )
-}
+export default Header;
