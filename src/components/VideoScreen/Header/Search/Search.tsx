@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
-import { brotliDecompress } from "zlib";
 import classes from "./Search.module.scss";
 import MyContext from "@/components/MyContext/MyContext";
 
