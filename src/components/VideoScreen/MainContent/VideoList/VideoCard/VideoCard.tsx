@@ -8,7 +8,7 @@ export const VideoCard = ({ video }:{video:Video}) => {
       <img
         src={video.snippet.thumbnails.medium.url}
         // alt={video.snippet.title}
-        // width="100%"
+        width="100%"
         className="rounded-lg "
       />
       <h3

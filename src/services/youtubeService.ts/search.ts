@@ -10,33 +10,35 @@ import { API_KEY, BASE_URL } from "./constants";
 const searchByKeyword = async(keyword: string) => {
   //Resource: https://developers.google.com/youtube/v3/docs/search/list
  
-    const response = await fetch(`${BASE_URL}/search?part=snippet&maxResults=50&q=${keyword}&key=${API_KEY}`);
+    const response = await fetch(`${BASE_URL}/search?part=snippet&maxResults=20&q=${keyword}&key=${API_KEY}`);
     if (!response.ok) {
-      return []
+      return {}
     }
     const data = await response.json();
    
   
-   return data.items
+   return data
    
 
 
 };
-// http://suggestqueries.google.com/complete/search?hl=en&ds=yt&client=youtube&q=${term}
-const getSuggestionList = async(keyword: string) => {
+//function to fetch infinite items
+const getVideosByNextToken = async(nextToken: string) => {
+  
  
-  try {
-    const response = await fetch(
-      `${BASE_URL}/search?part=snippet&maxResults=50&q=${keyword}&key=${API_KEY}`
-    );
-    const getSuggestionListData = await response.json();
-    return getSuggestionListData.items
+    const response = await fetch(`${BASE_URL}/search?part=snippet&maxResults=20&nextToken=${nextToken}&key=${API_KEY}`);
+    if (!response.ok) {
+      return {}
+    }
+    const data = await response.json();
+   
   
-  
+   return data
+   
 
-  } catch (error) {error}
+
 };
 
 
-export { searchByKeyword,getSuggestionList};
+export { searchByKeyword,getVideosByNextToken};
 
