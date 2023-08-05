@@ -29,7 +29,8 @@ export const MyContextProvider = ({ children }: { children: ReactElement }) => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [nextToken, setNextToken] = useState<string>("");
-  const observerRef = useRef< any>(null);
+
+  const observerRef = useRef<any>(null);
 
   //  function
 
