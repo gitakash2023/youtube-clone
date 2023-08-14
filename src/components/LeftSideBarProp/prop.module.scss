@@ -1,0 +1,21 @@
+.propIconAndText {
+  display: flex;
+  padding-top: 5px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+.container {
+  width: 140px;
+  margin-top: 8px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: 10px;
+}
+.text {
+  padding-top: 5px;
+  padding-left: 20px;
+  font-size: 8px;
+}

@@ -42,6 +42,7 @@ export const VideoCard = ({ video }: { video: Video }) => {
         >
           {video.snippet.description}
         </p>
+        
       </div>
     </div>
   );

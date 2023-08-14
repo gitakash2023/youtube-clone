@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
-import classes from "./Search.module.scss";
+ import classes from "./Search.module.scss";
 import MyContext from "@/components/MyContext/MyContext";
 
 export const Search = () => {
