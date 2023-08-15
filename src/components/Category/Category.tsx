@@ -15,6 +15,7 @@ export const Category = () => {
         {categories?.map((item) => (
           <Chip
             label={item.snippet.title}
+            size="small"
             onClick={() => handleCategoryClick(item.id)}
           />
         ))}

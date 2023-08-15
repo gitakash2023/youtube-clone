@@ -10,17 +10,18 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import LeftSideBarProp from "../LeftSideBarProp/LeftSideBarProp";
+import Image from 'next/image';
 
 function LeftSideBar() {
   const icon = [
-    <HomeIcon />,
-    <SortIcon />,
-    <SubscriptionsIcon />,
-    <VideoLibraryIcon />,
-    <HistoryIcon />,
-    <VideocamIcon />,
-    <WatchLaterIcon />,
-    <ThumbUpIcon />,
+    <HomeIcon fontSize="small"/>,
+    <SortIcon fontSize="small" />,
+    <SubscriptionsIcon  fontSize="small"/>,
+    <VideoLibraryIcon fontSize="small" />,
+    <HistoryIcon fontSize="small" />,
+    <VideocamIcon fontSize="small"/>,
+    <WatchLaterIcon fontSize="small"/>,
+    <ThumbUpIcon fontSize="small"/>,
   ];
   const text = [
     "Home",
@@ -36,10 +37,20 @@ function LeftSideBar() {
     <>
       <div className="flex">
         <div className="pl-3 ml-3">
-          <DehazeIcon />
+          <DehazeIcon  fontSize="small"/>
         </div>
         <div className="ml-4">
-          <YouTubeIcon />
+          <Image src="/Images/Youtube-Logo.png"  alt={'youtube logo'}width={100} height={100}
+          style={{
+            width:"80px",
+            height:"15px",
+            marginTop:"5px",
+            
+        
+
+
+          }}
+          />
         </div>
       </div>
       <div>
